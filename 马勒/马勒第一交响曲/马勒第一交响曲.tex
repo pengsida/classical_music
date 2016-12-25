@@ -1,0 +1,208 @@
+% !TeX spellcheck = en_US
+%% 字体：方正静蕾简体
+%%		 方正粗宋
+\documentclass[a4paper,left=2.5cm,right=2.5cm,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{cite}
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{tabu}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{appendix}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\setcounter{secnumdepth}{4}
+\usepackage{mhchem}
+\usepackage{multirow}
+\usepackage{extarrows}
+\usepackage{hyperref}
+\titleformat*{\section}{\LARGE}
+\renewcommand\refname{参考文献}
+\renewcommand{\abstractname}{\sihao \cjkfzcs 摘{  }要}
+%\titleformat{\chapter}{\centering\bfseries\huge\wryh}{}{0.7em}{}{}
+%\titleformat{\section}{\LARGE\bf}{\thesection}{1em}{}{}
+\titleformat{\subsection}{\Large\bfseries}{\thesubsection}{1em}{}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}{}
+\renewcommand{\contentsname}{{\cjkfzcs \centerline{目{  } 录}}}
+\setCJKfamilyfont{cjkhwxk}{STXingkai}
+\setCJKfamilyfont{cjkfzcs}{STSongti-SC-Regular}
+% \setCJKfamilyfont{cjkhwxk}{华文行楷}
+% \setCJKfamilyfont{cjkfzcs}{方正粗宋简体}
+\newcommand*{\cjkfzcs}{\CJKfamily{cjkfzcs}}
+\newcommand*{\cjkhwxk}{\CJKfamily{cjkhwxk}}
+\newfontfamily\wryh{Microsoft YaHei}
+\newfontfamily\hwzs{STZhongsong}
+\newfontfamily\hwst{STSong}
+\newfontfamily\hwfs{STFangsong}
+\newfontfamily\jljt{MicrosoftYaHei}
+\newfontfamily\hwxk{STXingkai}
+% \newfontfamily\hwzs{华文中宋}
+% \newfontfamily\hwst{华文宋体}
+% \newfontfamily\hwfs{华文仿宋}
+% \newfontfamily\jljt{方正静蕾简体}
+% \newfontfamily\hwxk{华文行楷}
+\newcommand{\verylarge}{\fontsize{60pt}{\baselineskip}\selectfont}  
+\newcommand{\chuhao}{\fontsize{44.9pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaochu}{\fontsize{38.5pt}{\baselineskip}\selectfont}  
+\newcommand{\yihao}{\fontsize{27.8pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaoyi}{\fontsize{25.7pt}{\baselineskip}\selectfont}  
+\newcommand{\erhao}{\fontsize{23.5pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaoerhao}{\fontsize{19.3pt}{\baselineskip}\selectfont} 
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}      % 字号设置  
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  % 字号设置  
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    % 字号设置  
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   % 字号设置  
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  % 字号设置  
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    % 字号设置 
+
+\usepackage{diagbox}
+\usepackage{multirow}
+\boldmath
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\definecolor{cred}{rgb}{0.8,0.8,0.8}
+\definecolor{cgreen}{rgb}{0,0.3,0}
+\definecolor{cpurple}{rgb}{0.5,0,0.35}
+\definecolor{cdocblue}{rgb}{0,0,0.3}
+\definecolor{cdark}{rgb}{0.95,1.0,1.0}
+\lstset{
+	language=C,
+	numbers=left,
+	numberstyle=\tiny\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	basicstyle=\scriptsize,
+	keywordstyle=\color{purple},
+	commentstyle=\itshape\color{cgreen},
+	stringstyle=\color{blue},
+	frame=lines,
+	% escapeinside=``,
+	extendedchars=true, 
+	xleftmargin=0em,
+	xrightmargin=0em, 
+	backgroundcolor=\color{cred},
+	aboveskip=1em,
+	breaklines=true,
+	tabsize=4
+} 
+
+\newfontfamily{\consolas}{Consolas}
+\newfontfamily{\monaco}{Monaco}
+\setmonofont[Mapping={}]{Consolas}	%英文引号之类的正常显示，相当于设置英文字体
+\setsansfont{Consolas} %设置英文字体 Monaco, Consolas,  Fantasque Sans Mono
+\setmainfont{Times New Roman}
+
+\setCJKmainfont{华文中宋}
+
+
+\newcommand{\fic}[1]{\begin{figure}[H]
+		\center
+		\includegraphics[width=0.8\textwidth]{#1}
+	\end{figure}}
+	
+\newcommand{\sizedfic}[2]{\begin{figure}[H]
+		\center
+		\includegraphics[width=#1\textwidth]{#2}
+	\end{figure}}
+
+\newcommand{\codefile}[1]{\lstinputlisting{#1}}
+
+\newcommand{\interval}{\vspace{0.5em}}
+
+\newcommand{\tablestart}{
+	\interval
+	\begin{longtable}{p{2cm}p{10cm}}
+	\hline}
+\newcommand{\tableend}{
+	\hline
+	\end{longtable}
+	\interval}
+
+% 改变段间隔
+\setlength{\parskip}{0.2em}
+\linespread{1.1}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\space \qquad \space}
+\chead{马勒第一交响曲 \qquad}
+\rhead{\qquad\thepage/\pageref{LastPage}}
+\begin{document}
+
+\tableofcontents
+
+\clearpage
+
+\section{简介}
+	马勒的《第一交响曲》，D大调，标题为《泰坦》，据德国浪漫派诗人保罗的同名诗而命名。泰坦是希腊神话中的巨神族，天神乌拉纽斯和地神盖娅所生的六男六女，所以也称为《巨人》。\par
+	作品完成于1888年，并于次年在布达佩斯首演，是马勒的第一部交响曲，也被称为《巨人》或《提坦》交响曲(提坦是古代希腊神话中的巨神族)。但从作品的内容来讲，几乎与名称完全不符，“巨人”的名称来自德国浪漫派作家让·保罗的一首同名诗。马勒最早将这部作品称为交响诗,分为两部分,“青年时代” 和“人间喜剧”。这首乐曲洋溢着刚刚认识了人生的富有抒情味的青年人的情感，表现出青年人在狭窄的世界里奋斗，以其血气方刚踏入人生路途的姿态。马勒的这部作品的管弦乐编制虽然很大，但作者却很成功地使各乐器很巧妙地唱出了歌曲型的旋律。这部作品是马勒早期的成功之作。\par
+
+\section{乐章}
+	全曲原分为五个乐章，1894年在魏玛演出时删去了第二乐章，后来就剩下四个乐章了。
+	\begin{itemize}
+		\item 第一乐章，D大调，4/4拍子，奏鸣曲形式。这一乐章的音乐徐缓朦胧、舒展而生动，主题是作者本人所作声乐套曲 《少年的魔号》中的民间歌曲《清晨穿越草原》。整个乐章规模很大，最后达到了狂热的高潮。
+		\item 第二乐章，激动的谐谑曲，其节奏如兰德勒舞曲。
+		\item 第三乐章，葬礼进行曲，音乐沉稳而庄严。
+		\item 第四乐章，暴风雨般的引子，然后是激动的快板，描述了地狱到天国的过程。乐曲最后以强有力而热情宏大的气势告终。
+	\end{itemize}
+
+\section{赏析}
+	这首交响曲作于1888年，在布达佩斯皇家歌剧院任指挥之时，1889年11月 20日由马勒自己指挥布达佩斯爱乐乐团，以“交响诗”名义首演。\par
+	原创作时有标题，第一部分:青年时代，花卉，果实，荆棘。这一部分又分为3段，马勒自己的说明为:1.春日天涯，引子和舒适的快板，引子描写大自然从漫长的冬眠中苏醒;2.采花，柔板;3.满帆，谐谑曲。\par
+	第二部分:人间喜剧”，分为两段，标题分别为“1.搁浅，卡洛风格的葬札进行曲，启发作曲者创作的外因是一幅讽刺画《猎人的送葬行列》，这是一本童话故事中的插图，奥地利的孩子们全都知道它。一群森林动物抬着去世猎人的灵枢送往墓地，兔子拿着小旗，走在它前面的是一队波希米亚音乐家，猫、蟾蛛、乌鸦等为他们伴唱，牡鹿、鹿、狐狸及森林中其它飞禽走兽尾随送葬行列，作出各种令人发笑的姿态。作曲者的意图是使音乐交替表现讽刺性的欢乐和不可思议的阴郁。紧跟在它后面的是: 2.来自地狱，表现一个受严重创伤的心灵的一声突然的绝望呼喊。”马勒后来抛弃了这个说明，他声称这标题和说明材料是“在作品写好后加上去的，我之所把它们弃而不用，不仅因为我发现它们完全不恰当，甚至不十分正确，而且还因为过去的经验告诉我，它们曾如何把听众引人歧途。\par
+	在第三乐章中，我的确是直接受著名儿童画《猎人的送葬行列》的启发。但在这里，表现的内容是无足轻重的，重要的是应该表现的那种气氛。\par
+	第四乐章便是从这种气氛突然一跃而出，仿佛是乌云背后出来一道闪电。这只是受严重创伤的心灵在经历了送葬行列的阴风惨惨和愁云密布的压抑情绪之后发出的一声呼喊。\par
+
+\subsection{乐章赏析}
+\subsubsection{第一乐章}
+	D大调，奏鸣曲式，指示以“缓慢而沉重”的序奏开始，在长大的A音持续音上，双簧管与低音管奏下行四度为特征的动机，它极似杜鹃的啼吐啭，其旋 律来自马勒自己《打短工的流浪者之歌》中的第二首歌《清晨穿越草原》。这个动机串联着全曲，成为全曲的灵魂，呼应它的是远方的信号曲，充满宁静。主部先由 大提琴奏主导动机发展而成的第一主题，其它乐器发展对位，发展到A大调时，出现对位性的第二主题。发展部先是在高音弦背景上，木管表现田园性的安详，大提 琴乘着持续音，奏出像呼唤一样的旋律。双簧管与单簧管对话后，木管的杜鹃的啼啭再次强调宁静。然后长笛表现小鸟的歌唱，大提琴、小提琴发展至降D大调，木 管奏出新旋律，小提琴活泼地运动。对位法再现第一主题后，进入大致如呈示部进行的再现部。最后，一面强调主导动机，一面以强烈的音响而结束。
+
+\subsubsection{第二乐章}
+	行板，A大调，三段体。这个慢乐章选用了马勒自己早期为冯·歇弗尔的诗《萨金根的号手》而谱写的歌曲旋律作为基本主题。马勒的朋友斯坦尼塞称这 个旋律为“沃纳尔小号曲”，是“一首小夜曲，它飘越月光映照的莱茵河，飞向玛格丽特所住的城堡。”斯坦厄塞说，马勒认为这首小夜曲表达的是感伤。这个乐章 的第一段，月光映照的环境下，这首小夜曲的旋律出现后，圆号与小提琴狂热地强化热情，优雅的中间段在小夜曲旋律基础上脱颖而出，小提琴的独奏精妙绝伦。第 三段重复第一段，最后消失在黄昏的天空之中。这个慢乐章后曾被马勒删除(4个乐章版)，直到1967年，才又有恢复5个乐章的演奏。
+
+\subsubsection{第三乐章}
+	指示为“强有力的运动”，A大调，布鲁克纳式的谐谑曲风格。大提琴与低音提琴先强有力地奏出一个由全曲主导动机组成的固定音型，它与小提琴不断 反复的八度跳跃音型共同组成背景，在这背景上呈现兰德勒舞曲节奏的主题中段为F大调，有田园风味的圆舞曲风格，以主导动机作为低音伴奏。在长笛、单簧管与 弦乐进行中，新的旋律以对位形态显示，圆号以八度的呼唤，引向作为再现的第三段。第三段比第一段更为单纯。
+
+\subsubsection{第四乐章}
+	指示“不要缓慢，庄重而威严地”，D小调，三段体。主导动机由定音鼓敲出，然后低音乐器以卡农方式表现古老的波希米亚民歌旋律，这个漫画式的葬 礼进行曲旋律，与低音提琴奏出的古老的大学生歌曲《你睡着了吗，马丁兄弟》作对比，似乎是嘲笑画中死去的猎人。用布鲁诺·瓦尔特的说法，马勒在创作这个乐 章时， “保罗的《巨人》中那个魔鬼般的形象在作祟。在巨人身上，马勒发现了那内含的可怕不协和音，那蔑视和绝望，那种在天国和地狱的冲动之间的游移摆动，这些很 可能在一段时间内侵袭着他有创伤的心灵。”在这个乐章中，葬礼进行曲被两次打断: 先是一个故意要表现得陈腐的曲调，然后是长时间引用马勒自己《打短工的流浪者之歌》最后的绝望之歌。乐章结束时，一次次强调那个主导动机。
+
+\subsubsection{第五乐章}
+	标示为“如暴风雨般的运动”，奏鸣曲式，由3大部分构成，表现从地狱到天国的过程。第一段由F小调支配，先表现“闪电式的呼喊”。在弦乐粗犷的 呼唤中，小号与长号的加强，在很长的铺垫下，才出现律动性的第一主题。这一主题由F小调转为降A大调，表现出非凡的兴奋，然后又转向“很粗暴”的部分。这 第一段似是表现地狱、人与命运的搏斗。中间部分主要表现动人的第二主题，它引出种种温馨的回忆，似乎是表现地狱向天堂，也是灵魂的升华。然后第三段以圆号 呈示主导动机开始转向辉煌地表现人的灵魂的胜利，人类的喜剧。在越来越强烈的鼓荡下，最终是指示“以最高度的力”，像是对战胜绝望的人类的赞颂，形式辉煌的尾声。
+
+\section{音乐欣赏}
+	《D大调第一交响曲》正如标题《巨人》所显示的，是一部巨作。它富于戏剧性，有哀伤也有欢乐，在许多方面都具有势不可挡的气势。演奏这部作品的管弦乐团包括了7支圆号领衔的庞大管乐器和铜管乐器组。为了画好这幅庞大的音乐画卷，马勒把所有乐器的功用都发挥到了极致。这部交响曲是从勃拉姆斯、布鲁克纳和舒曼等前辈的大型浪漫主义交响乐作品发展到马勒这一代的自然结果。马勒所做的，是扩展了音乐的浪漫性和范围，从时代和音乐两个方面开启了20世纪古典音乐的先河。
+
+\subsection{第一乐章}
+	这部交响曲的开头很神秘。弦乐器以其宽广音域奏出的音符创造出一种怪异的宁静感，随之而来单簧管的柔和声打破了这种宁静，接着小号远远地吹起。序曲 在更多乐器的加入下缓缓地进行着。单簧管发出模仿布谷鸟的卢音，接着大提琴领衔演奏一段欢快的旋律。音量持续上升，最后整个乐队都参与了进来。很快弦乐器 又恢复了单独演奏，序曲的神秘感再次出现。\par
+	接下去的一个段落可以很恰当地形容为一个缓慢的发展部，紧张感在增强，渐渐导向某种形式的解决。圆号最早呈现出解决的端倪，接着乐队开始重奏田园诗 般的旋律。宁静感直到先前听到的紧张感再次出现才消除，小号颇具气魄地吹响了警告。从这里开始，弦乐器和低沉的管乐器特别是长号之间形成冲突对峙。积聚起 来的紧张感不可避免地发展成一阵乐音的爆发，钹在圆号的引导下奏出的轰鸣声将
+	气氛烘托到了高潮。乐曲在一片混乱中又回复到了先前的抒情段落，所不同的是增 添了勃勃的生气。演奏越来越快，直至突然开始一次欢快的合奏，结束了第一乐章。
+
+\subsection{第二乐章}
+	这一乐章具有连德勒舞曲(一种在19世纪初流行的奥地利舞曲)的风格。序曲欢快而有力，暗示着喧闹场面的到来。弦乐器开始表现庆典场面，管乐器也很 快加了进来。舞曲的热力在参与演奏主题的每件乐器之间传递。接着圆号开始了一段快速独奏，给人以不可遏制的兴奋感;随后大提琴开始演奏，一切都安静了下 来。旋律重现，由小号和圆号带头释放出欢乐的活力。\par
+	在三声中部的段落，嬉戏声被田园式的安静所取代，这是一段充满感伤的曲子。柔和的旋律和甜蜜的气氛持续了一段时间，然后圆号独奏又回到舞曲的演奏，不同的是比以前更嘈杂了。等圆号和小号开始演奏旋律，舞曲加快了速度，该乐章进入了响亮而又欢乐的尾声。
+
+\subsection{第三乐章}
+	这个乐章的开头是所有交响曲里最奇特的开头之一。定音鼓敲出8个固定节拍的音符，庄严的引子过后是低音提琴的独奏。低音提琴独奏本身已经很难得了，而它演奏的旋律是用小调对法国民歌《雅克兄弟》进行改编的曲子，这就使得这个开头显得更加怪异了。这个独奏的音很高，对任何低音提琴的演奏者来说都是很困 难的。除了定音鼓连续不断的敲击外，低音提琴完全孤立地进行演奏，这就更加增添了挑战性。接着其他乐器开始演奏这段旋律，转入了卡农，好像孩子们在唱这首 歌一样。不过这段旋律在马勒的笔下没有孩子们的快乐，相反倒是充满了沮丧。\par
+	卡农一直持续到由双簧管和小号奏出一段悲伤的新旋律。接着是一段变了型的进行曲，音乐演奏到这里好像开始努力克制哀伤情绪。但是这种努力失败了，随 着定音鼓再次敲出响亮的鼓声，《雅克兄弟》的旋律又出现了。然后竖琴和小提琴领衔演奏一个新的主题，四周弥漫着一种悲伤而又顺从的宁静感。竖琴取代了定音 鼓的演奏，直到定音鼓再次出现，重新演奏《雅克兄弟》的主题。\par
+	乐章的尾部，钹再次演奏那段奇怪的进行曲，单簧管的演奏加大了音乐的声音。随着音乐逐渐从不协调走向协调，定音鼓和竖琴一起开始了声音逐渐减弱的演奏。最后由定音鼓和锣演奏，乐章的尾声充满了悲伤和不安的气氛。
+	
+\subsection{第四乐章}
+	最后一个乐章的关键，安宁与绝对混乱的交替出现，给人感觉像是正义与邪恶之间的搏斗。这是整个乐队的猛烈合奏，接着是小提琴、小号和铜管乐器的疯狂演奏。\par
+	在这一片狂乱中，双簧管、单簧管、圆号和长号首先开始演奏一段旋律。这个段落的情绪仍然很愤怒，并且第一次暗示即将爆发不同势力之间的冲突。整个过 程中，乐器之间互相争斗，好像要在一片混乱中建立控制权似的。比如当弦乐器开始演奏时，鼓和铜管乐器就奏出对峙似的乐音。最终猛烈的能量衰退了，持续的战 斗也戛然而止，只剩下小号在远处喘息。\par
+	最初的战斗一结束，小提琴就奏出一段安静的旋律，这是一些充满了宽恕精神的持续乐句。接着由低音提琴和大提琴演奏拨奏曲。旋律的音量在定音鼓发出的 隆隆鼓声中逐渐增强，接着是一段短暂而又漂亮的圆号独奏。大提琴的安静演奏，明确给人以宁静却不可持久的感觉。小提琴和中提琴奏出一个颤音，充满了神秘 感。长号和小号奏出的3个音符则预示着另一次高潮的到来和混乱的回归。\par
+	随着双簧管和单簧管奏响好像宣布骑兵到来的乐句，音乐在一片混乱中重新建立了秩序。接着小号开始演奏新的主题，有一点比较明确，至少现在正义的力量 获得了胜利。然而只过了一会，又起了风暴，混乱再度出现，直到圆号在远处三角铁的伴奏下奏响欢乐的乐音为止才结束。胜利的感觉维持了很长时间，然后渐渐平 息，再次演奏整个交响曲开头那段神秘的旋律。从这时开始的大部分时间都很平静。\par
+	中提琴奏出的短暂乐音预示安静不会持续太久、冲突又将来临。小号吹出的一系列呼唤证实了这点。湍流继续涌动，直至由小号和圆号启动的另一次大爆发。 忽然短笛吹出的尖利哨音划破了新的混沌。这次随着圆号吹出一系列得胜的号角，正义的力量很快获得了胜利。定音鼓在胜利的进行曲中发出了推动的力量。定音 鼓、小号、长号、大号奏出一系列欢快的响亮乐音，三角铁则不停地鸣响，引导这部交响曲进入兴高采烈的尾声。
+
+\end{document}
