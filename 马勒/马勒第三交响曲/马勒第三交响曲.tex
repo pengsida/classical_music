@@ -1,0 +1,186 @@
+% !TeX spellcheck = en_US
+%% 字体：方正静蕾简体
+%%		 方正粗宋
+\documentclass[a4paper,left=2.5cm,right=2.5cm,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{cite}
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{tabu}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{appendix}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\setcounter{secnumdepth}{4}
+\usepackage{mhchem}
+\usepackage{multirow}
+\usepackage{extarrows}
+\usepackage{hyperref}
+\titleformat*{\section}{\LARGE}
+\renewcommand\refname{参考文献}
+\renewcommand{\abstractname}{\sihao \cjkfzcs 摘{  }要}
+%\titleformat{\chapter}{\centering\bfseries\huge\wryh}{}{0.7em}{}{}
+%\titleformat{\section}{\LARGE\bf}{\thesection}{1em}{}{}
+\titleformat{\subsection}{\Large\bfseries}{\thesubsection}{1em}{}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}{}
+\renewcommand{\contentsname}{{\cjkfzcs \centerline{目{  } 录}}}
+\setCJKfamilyfont{cjkhwxk}{STXingkai}
+\setCJKfamilyfont{cjkfzcs}{STSongti-SC-Regular}
+% \setCJKfamilyfont{cjkhwxk}{华文行楷}
+% \setCJKfamilyfont{cjkfzcs}{方正粗宋简体}
+\newcommand*{\cjkfzcs}{\CJKfamily{cjkfzcs}}
+\newcommand*{\cjkhwxk}{\CJKfamily{cjkhwxk}}
+\newfontfamily\wryh{Microsoft YaHei}
+\newfontfamily\hwzs{STZhongsong}
+\newfontfamily\hwst{STSong}
+\newfontfamily\hwfs{STFangsong}
+\newfontfamily\jljt{MicrosoftYaHei}
+\newfontfamily\hwxk{STXingkai}
+% \newfontfamily\hwzs{华文中宋}
+% \newfontfamily\hwst{华文宋体}
+% \newfontfamily\hwfs{华文仿宋}
+% \newfontfamily\jljt{方正静蕾简体}
+% \newfontfamily\hwxk{华文行楷}
+\newcommand{\verylarge}{\fontsize{60pt}{\baselineskip}\selectfont}  
+\newcommand{\chuhao}{\fontsize{44.9pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaochu}{\fontsize{38.5pt}{\baselineskip}\selectfont}  
+\newcommand{\yihao}{\fontsize{27.8pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaoyi}{\fontsize{25.7pt}{\baselineskip}\selectfont}  
+\newcommand{\erhao}{\fontsize{23.5pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaoerhao}{\fontsize{19.3pt}{\baselineskip}\selectfont} 
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}      % 字号设置  
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  % 字号设置  
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    % 字号设置  
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   % 字号设置  
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  % 字号设置  
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    % 字号设置 
+
+\usepackage{diagbox}
+\usepackage{multirow}
+\boldmath
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\definecolor{cred}{rgb}{0.8,0.8,0.8}
+\definecolor{cgreen}{rgb}{0,0.3,0}
+\definecolor{cpurple}{rgb}{0.5,0,0.35}
+\definecolor{cdocblue}{rgb}{0,0,0.3}
+\definecolor{cdark}{rgb}{0.95,1.0,1.0}
+\lstset{
+	language=C,
+	numbers=left,
+	numberstyle=\tiny\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	basicstyle=\scriptsize,
+	keywordstyle=\color{purple},
+	commentstyle=\itshape\color{cgreen},
+	stringstyle=\color{blue},
+	frame=lines,
+	% escapeinside=``,
+	extendedchars=true, 
+	xleftmargin=0em,
+	xrightmargin=0em, 
+	backgroundcolor=\color{cred},
+	aboveskip=1em,
+	breaklines=true,
+	tabsize=4
+} 
+
+\newfontfamily{\consolas}{Consolas}
+\newfontfamily{\monaco}{Monaco}
+\setmonofont[Mapping={}]{Consolas}	%英文引号之类的正常显示，相当于设置英文字体
+\setsansfont{Consolas} %设置英文字体 Monaco, Consolas,  Fantasque Sans Mono
+\setmainfont{Times New Roman}
+
+\setCJKmainfont{华文中宋}
+
+
+\newcommand{\fic}[1]{\begin{figure}[H]
+		\center
+		\includegraphics[width=0.8\textwidth]{#1}
+	\end{figure}}
+	
+\newcommand{\sizedfic}[2]{\begin{figure}[H]
+		\center
+		\includegraphics[width=#1\textwidth]{#2}
+	\end{figure}}
+
+\newcommand{\codefile}[1]{\lstinputlisting{#1}}
+
+\newcommand{\interval}{\vspace{0.5em}}
+
+\newcommand{\tablestart}{
+	\interval
+	\begin{longtable}{p{2cm}p{10cm}}
+	\hline}
+\newcommand{\tableend}{
+	\hline
+	\end{longtable}
+	\interval}
+
+% 改变段间隔
+\setlength{\parskip}{0.2em}
+\linespread{1.1}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\space \qquad \space}
+\chead{马勒第一交响曲 \qquad}
+\rhead{\qquad\thepage/\pageref{LastPage}}
+\begin{document}
+
+\tableofcontents
+
+\clearpage
+
+\section{简介}
+	马勒的《第三交响曲》，D小调，作于1895-1896年，表现的是马勒的自然观。马勒原定此曲标题为《夏日正午之梦》。
+
+\section{乐章段落}
+\subsection{第一部分}
+	\begin{itemize}
+		\item[1.] 引子，牧神潘在乐曲开头的哀乐声中入睡，标志着夏日的来临(酒神巴克斯的行列)。
+	\end{itemize}
+
+\subsection{第二部分}
+	\begin{itemize}
+		\item[2.]草原的花朵告诉我
+		\item[3.]森林的动物告诉我
+		\item[4.]人类告诉我
+		\item[5.]天使告诉我
+		\item[6.]爱情告诉我
+	\end{itemize}
+
+\section{乐章赏析}
+\subsection{第一乐章}
+	D小调，指示“强有力而决然地”，扩大的奏鸣曲式。8把圆号有力地表现第一主题，铜管与打击乐以进行曲节奏加强，加入小号的信号曲动机，表示夏天接 近森林。圆号再表现由第一主题动机发展而成的第二主题，小号承接，圆号反复后，进入第三主题部，表现拒绝苏醒的牧神。牧神的苏醒在大自然类似小鸟、动物的 叫声衬托下非常动人。然后单簧管奏第四主题，小提琴承接它趋于平静进入呈示部小结尾。发展部以圆号表现的第二主题开始，加入小号的信号曲动机，平静之后由 长号移自英国管，在平静中进行第三主题。然后再出现第四主题与第三主题的重合，回到进行曲风格，平静下来后双簧管再奏第三主题，紧接着与经过部旋律的第一 主题作对位性结合，达到辉煌顶点后进入再现部。再现部比呈示部缩小很多，按顺序再现各主题后，圆号出现第一主题，进入呈示部一样的小结尾，造成高潮。
+
+\subsection{第二乐章}
+	小步舞曲速度，A大调，优雅的洛可可风格，扩大的三段体，即把中段出现两次。以双簧管表现主要主题，各件乐器一一发展。第一中段是升 F小调，长笛与中提琴奏乡愁感的主旋律。第二中段由双簧管与单簧管开始，然后长笛与中提琴第三次再现主题，最后以泛音的高音和弦来结束。
+
+\subsection{第三乐章}
+	悠闲的谐谑曲，C小调，指示为“不急速地”。这一乐章据《少年的魔角》中的《夏末》的歌词而作，歌词大意为:“杜鹃掉进柳树的洞穴里死了，夜莺在翠 绿的枝头啼啭，将让我们快乐……”自由的三段体，先由单簧管奏出主麒其它木管乐器奏出如小鸟啼叫一样的音形。天色大亮，小提琴以新的动机加入。在经过短暂 的经过句后，小号奏出信号型旋律，邮号承接，营造出神秘的森林气氛。再一次缓慢地奏出主要主题后，突然变成华丽的氛围，传来奥地利军队的旋律，然后又以邮 号来引向宁静。
+
+\subsection{第四乐章}
+	D大调，“极为缓慢、神秘地”。在平静的演奏后，女低音独唱，歌词为尼采《查拉图斯特拉如是说》第四部醉歌后查拉图斯特拉的轮唱。歌词大意是: “啊，人类，请注意，深夜说了些什么，我睡着了，从深沉的睡梦中醒来，世界比白天所想的更为深沉，啊，人类，非常的深沉，苦恼是非常的深沉，快乐比伤心更 为深沉，苦恼说灭亡吧，然而所有的快乐，却企求深远的永恒。”
+
+\subsection{第五乐章}
+	F大调，指示为“以活泼的速度，表现要大胆。” 先以童声合唱模仿钟声而反复“宾、邦”，然后女声合唱、女声独唱，歌词为《少年的魔角》中《3个天使在唱快乐的歌》。歌词大意为:“3个天使在唱快乐的 歌，在天上，那是快乐而幸福的音响，于是他们快乐地欢笑，说彼得无罪，主耶稣就坐在餐桌旁，与12圣徒一起享用最后的晚餐，耶稣说，你在干什么，我看到， 你在流泪，难道我不该流泪，你慈悲的上帝，我已犯了十诫，我跚跚独行泪湿衣衫，你不该哭，啊，来吧，请怜悯我，如果你犯了十诫，快跪下向上帝祈祷，只爱永 恒的上帝，这样你才能懂得天国的欢乐，天国之域已为你彼得做了准备，通过基督，为了拯救所有的人。”最后，以女声与童声一起合唱“宾、邦”而结束。
+
+\subsection{第六乐章}
+	D大调，指示为“缓慢、平静、充满感情地”，自由的回旋曲式。开始以弦乐幽静地表现主要主题，对位极为优美。加入木管后以小调表现副主题，以新的对 位，由小提琴再现主要主题，加上第一乐章第一主题动机，形成高潮。然后主题又宁静地再现，加强力度后加上第一乐章小结尾动机，达到雄壮的高潮。再以铜管出 现主要主题，纠缠着副主题而发展，最后以光明而结尾。这个乐章像是从对天使的凝视开始，最后是讴歌爱而结束。
+	
+
+\end{document}
