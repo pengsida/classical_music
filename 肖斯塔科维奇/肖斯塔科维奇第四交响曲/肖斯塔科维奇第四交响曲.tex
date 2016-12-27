@@ -1,0 +1,211 @@
+% !TeX spellcheck = en_US
+%% 字体：方正静蕾简体
+%%		 方正粗宋
+\documentclass[a4paper,left=2.5cm,right=2.5cm,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{cite}
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{tabu}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{appendix}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\setcounter{secnumdepth}{4}
+\usepackage{mhchem}
+\usepackage{multirow}
+\usepackage{extarrows}
+\usepackage{hyperref}
+\titleformat*{\section}{\LARGE}
+\renewcommand\refname{参考文献}
+\renewcommand{\abstractname}{\sihao \cjkfzcs 摘{  }要}
+%\titleformat{\chapter}{\centering\bfseries\huge\wryh}{}{0.7em}{}{}
+%\titleformat{\section}{\LARGE\bf}{\thesection}{1em}{}{}
+\titleformat{\subsection}{\Large\bfseries}{\thesubsection}{1em}{}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}{}
+\renewcommand{\contentsname}{{\cjkfzcs \centerline{目{  } 录}}}
+\setCJKfamilyfont{cjkhwxk}{STXingkai}
+\setCJKfamilyfont{cjkfzcs}{STSongti-SC-Regular}
+% \setCJKfamilyfont{cjkhwxk}{华文行楷}
+% \setCJKfamilyfont{cjkfzcs}{方正粗宋简体}
+\newcommand*{\cjkfzcs}{\CJKfamily{cjkfzcs}}
+\newcommand*{\cjkhwxk}{\CJKfamily{cjkhwxk}}
+\newfontfamily\wryh{Microsoft YaHei}
+\newfontfamily\hwzs{STZhongsong}
+\newfontfamily\hwst{STSong}
+\newfontfamily\hwfs{STFangsong}
+\newfontfamily\jljt{MicrosoftYaHei}
+\newfontfamily\hwxk{STXingkai}
+% \newfontfamily\hwzs{华文中宋}
+% \newfontfamily\hwst{华文宋体}
+% \newfontfamily\hwfs{华文仿宋}
+% \newfontfamily\jljt{方正静蕾简体}
+% \newfontfamily\hwxk{华文行楷}
+\newcommand{\verylarge}{\fontsize{60pt}{\baselineskip}\selectfont}  
+\newcommand{\chuhao}{\fontsize{44.9pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaochu}{\fontsize{38.5pt}{\baselineskip}\selectfont}  
+\newcommand{\yihao}{\fontsize{27.8pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaoyi}{\fontsize{25.7pt}{\baselineskip}\selectfont}  
+\newcommand{\erhao}{\fontsize{23.5pt}{\baselineskip}\selectfont}  
+\newcommand{\xiaoerhao}{\fontsize{19.3pt}{\baselineskip}\selectfont} 
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}      % 字号设置  
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  % 字号设置  
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    % 字号设置  
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   % 字号设置  
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  % 字号设置  
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    % 字号设置 
+
+\usepackage{diagbox}
+\usepackage{multirow}
+\boldmath
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\definecolor{cred}{rgb}{0.8,0.8,0.8}
+\definecolor{cgreen}{rgb}{0,0.3,0}
+\definecolor{cpurple}{rgb}{0.5,0,0.35}
+\definecolor{cdocblue}{rgb}{0,0,0.3}
+\definecolor{cdark}{rgb}{0.95,1.0,1.0}
+\lstset{
+	language=C,
+	numbers=left,
+	numberstyle=\tiny\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	basicstyle=\scriptsize,
+	keywordstyle=\color{purple},
+	commentstyle=\itshape\color{cgreen},
+	stringstyle=\color{blue},
+	frame=lines,
+	% escapeinside=``,
+	extendedchars=true, 
+	xleftmargin=0em,
+	xrightmargin=0em, 
+	backgroundcolor=\color{cred},
+	aboveskip=1em,
+	breaklines=true,
+	tabsize=4
+} 
+
+\newfontfamily{\consolas}{Consolas}
+\newfontfamily{\monaco}{Monaco}
+\setmonofont[Mapping={}]{Consolas}	%英文引号之类的正常显示，相当于设置英文字体
+\setsansfont{Consolas} %设置英文字体 Monaco, Consolas,  Fantasque Sans Mono
+\setmainfont{Times New Roman}
+
+\setCJKmainfont{华文中宋}
+
+
+\newcommand{\fic}[1]{\begin{figure}[H]
+		\center
+		\includegraphics[width=0.8\textwidth]{#1}
+	\end{figure}}
+	
+\newcommand{\sizedfic}[2]{\begin{figure}[H]
+		\center
+		\includegraphics[width=#1\textwidth]{#2}
+	\end{figure}}
+
+\newcommand{\codefile}[1]{\lstinputlisting{#1}}
+
+\newcommand{\interval}{\vspace{0.5em}}
+
+\newcommand{\tablestart}{
+	\interval
+	\begin{longtable}{p{2cm}p{10cm}}
+	\hline}
+\newcommand{\tableend}{
+	\hline
+	\end{longtable}
+	\interval}
+
+% 改变段间隔
+\setlength{\parskip}{0.2em}
+\linespread{1.1}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\space \qquad \space}
+\chead{肖斯塔科维奇第四交响曲 \qquad}
+\rhead{\qquad\thepage/\pageref{LastPage}}
+\begin{document}
+
+\tableofcontents
+
+\clearpage
+
+\section{简介}
+	肖斯塔科维奇的《第四交响曲》（1935-36）是其情感表现最为激烈的作品，理性控制不足导致作品在形式方面不够完整，而这份真情流露恰恰是作曲家本人偏爱这部交响曲的原因。\par
+
+	《第四交响曲》的悲观绝望太赤裸了——恶将善彻底吞噬，刚刚发现“皇帝没穿衣服”的肖斯塔科维奇急于喊出这个事实，不料还没等喊出来，自己已经成了人民公敌，于是这句话又被咽了下去。他发现，谎言成为了集体意识，神话代替了真理，极权系统里每个人都要按照扭曲的法则运转。年轻而敏感的肖斯塔科维奇渐渐懂得，宣传口号与荒谬现实既相反又相融，从此，个体与集体的矛盾、我与非我的分裂、生与死的挣扎成为了肖氏交响曲的核心。作为一个作曲家，他要有多么持久的意志来忍受这种分裂？作为一个人，他又要有多么超脱的灵魂来隐藏一生的秘密？他把这一切用抽象的交响音乐表达出来，我们只需要闭眼倾听，便能钻到秘密的深处。因此，尽管复杂的创作环境、庞杂的表现内容、曲折的演出历程使得《第四交响曲》成为肖斯塔科维奇音乐中最大的谜团，但由于它的情感是那么露骨，以至于我们只需要用耳朵便能揭开谜底。
+
+% \section{乐章段落}
+% \subsection{第一部分}
+% 	\begin{itemize}
+% 		\item[1.] 引子，牧神潘在乐曲开头的哀乐声中入睡，标志着夏日的来临(酒神巴克斯的行列)。
+% 	\end{itemize}
+
+% \subsection{第二部分}
+% 	\begin{itemize}
+% 		\item[2.]草原的花朵告诉我
+% 		\item[3.]森林的动物告诉我
+% 		\item[4.]人类告诉我
+% 		\item[5.]天使告诉我
+% 		\item[6.]爱情告诉我
+% 	\end{itemize}
+
+\section{乐章赏析}
+\subsection{第一乐章}
+	肖斯塔科维奇的交响曲多以“慢启动”开始，在沉思冥想中展开动力性结构是其特有的交响语汇。在他十五首交响曲中，只有第1、4、9、15首交响曲从小快板（Allegretto）开始。而第1、9、15首的第一乐章一律轻盈短小，唯独《第四交响曲》开篇便是四管编制的庞大乐团直直碾压过来，将近半个小时的长度，总谱上千小节，占据了全曲的一半篇幅。在如此阴霾的音响下，倒装再现的奏鸣曲式呈现出拱形结构，像一个巨大的穹顶，无处可逃。\par
+
+	乐曲的引子，是全体木管以ff强力奏出的三个装饰音，在木琴敲击的伴随下像三个阴森的冷颤。这个主导音型如阴魂附身，短短1分钟内先后变换后十六、三连音、反附点三种节奏型，在不同乐器组的交接中愈发咄咄逼人。前32小节将近两分钟的时间里，主部主题I的每个音符几乎都标上了重音记号，只有发了疯的人才会这样做！罗斯曾这样形容这个开头：“15支高音木管像一个步伐整齐的方阵，8支圆号则像一个拼命抵抗的中队，而低音木管和弦乐奏出的固定音型，像一个反复下压的打气筒。”\par
+
+	　曲中如此段着魔的片段不胜枚举，肖氏音乐的撒旦形象常常影射现实世界的暴君。我们在听这种疯癫音响时会听到自己内心的暴君，而从中所产生的压迫感和释放感，实际皆来自灵魂中丑恶与非理性的一面。此时，肖斯塔科维奇像同样戴圆框眼镜的哈利·波特一样施展魔法，让听者在灵魂出窍的过程中欣赏这朵“恶之花”，并在最后摧毁它。这愤怒的嘶喊并非来自摇滚乐的电吉他，而是一个130人的交响乐团。\par
+
+	古典交响曲代表着崇高的“乌托邦”精神，再现部时副部调性服从至庄严的主部正是这种理想主义的体现。而这部交响曲的主部以撒旦形象示人，这就为作品的“终结乌托邦”奠定了基础。最终我们听到，经过主题变形，副部从朴实的本质开始（呈示），逐渐异化（展开），最终与撒旦同流合污（再现）。\par
+
+	抵达副部之前的段落颇具讽刺意味：在排练号26之后（约6分钟处），单簧管在高音区奏出荒诞的音调，节拍依次经过3/8、2/4、6/8、9/8的密集加速，至排练号29转为3/4拍，大提组、小提组和木管组依次伸展发力，陡然转向4/4拍，每个音再次戴上重音记号，力度推至ffff，乐队集体在高音区嘶喊，只听圆号和定音鼓反复五次上五度跳进（这种音型的符号意义可在我们的《国歌》开始时“起来”二字中听到）。这个莫名其妙的高潮以一小节休止戛然收场，紧接大管独奏副部主题。\par
+
+	这个朴实哀伤的副部主题在展开部经历了多个阶段的“异化”。从排练号48（约13分钟处）开始，低音大管以沉重的表情奏出副部主题，弦乐、木管和木琴不时闪现出一个下行九度大跳音型，在重音记号的压迫下略显诡异；大号接过副部没多久，整个铜管组便彻底转变了这个主题的性格，像是一个老农变成了不可一世的君王。\par
+
+	主部主题突然插入，一大段木管重奏中，夹杂着副部音调，二者以极其滑稽的方式交织融合。其后凭空插入的赋格段是肖斯塔科维奇交响音乐中最精彩的片段之一！在疾速狂奔的提琴和摧枯拉朽的铜管音流中，众多主题复杂而精确地对位，每一个角色按照既定规则，动作僵硬地营造出一派热火朝天的景象。\par
+
+	再现部从引子再现开始（排练号92，约22分钟处），木管奏出长颤音，弦乐、圆号和大管则改以半音阶三连音型呼应，焦灼的呻吟声似乎预示着什么不幸的事——果然，固定音型上方再现的不是主部，而是副部！长号的冷峻音色更凸显了这幕从“我”到“反我”的悲剧，人坐在撒旦的位置上发号施令，扭曲而分裂的人格成了集体意识。乐章的最后三分钟，是主部两个主题的倒装再现——主部主题II在独奏小提琴上哀诉，主部主题I则由大管奏出——大管？没错，正是那个呈现副部最初面貌的乐器，一切都颠倒过来了。末尾木管组的两声哀叹，伴随着大号和大管的呜咽，乐章在单簧管反复吹奏的下五度音型不了了之。
+
+\subsection{第二乐章}
+	《第四交响曲》最能体现马勒交响理念对肖氏的影响，而第二乐章在旋律和配器等方面均有马勒《第二交响曲》第三乐章的浓重痕迹，若是单独演奏真会让人误以为是马勒的一首连德勒舞曲。\par
+
+	这个间奏曲般的乐章曲式极为明晰：A-B-A-B-尾声，看似是另一个田园世界，但两个主题各自却有着并不简单的前世今生，像电影《云图》里的主人公，尽管在每个轮回中建构着不同的故事，却都有着各自抹不去的印记和本质。\par
+
+	A主题实际上是第一乐章主部主题的性格变奏。它在这里由中提琴呈示，弦乐组的上下呼应增添了几分梦幻色彩；交由木管组重复后，小提琴不时插入怪异的下滑音，在分裂展开中变得荒诞不经。B主题后来成为《第五交响曲》的主部主题，在那里也是第一小提琴组呈示，只是这里的3/8拍在那里变成了4/4拍——旋转舞步变成了庄重沉思。B主题在转交木管组变奏重复后再次“跑调”，就在乐队多个线条洋洋洒洒即将升腾时，定音鼓的三声重击打断了这股势头。\par
+
+	A主题再现还是以弦乐组开始，但织体一律改为密接合应的长大卡农，一气呵成至B主题再现。在四支圆号齐奏出B主题再现之前，肖斯塔科维奇将木管组被分成20个声部，再次运用了《第二交响曲》开篇尝试的类似微复调的密集卡农写法，很快导向B主题的大合奏，颇有百川汇流之势。尾声由加弱音器的第一小提琴轻盈奏出，响板与木鱼的旁敲侧击出迷离的梦幻色彩——这个奇特组合在肖斯塔科维奇的《第十五交响曲》末尾再次出现，效果非常奇妙。
+
+\subsection{第三乐章}
+	末乐章总结了肖斯塔科维奇对马勒的继承——这是一个无所不包的世界，崇高和低俗的声音摞在一起，为了展现不加粉饰的真实甚至抛弃传统形式，其实作品长期被人诟病的形式缺憾主要在于这个奇特的末乐章。前文说过，第三乐章主要写于肖斯塔科维奇受批判后等死的日子，这个葬礼进行曲可以视为他对自己一生的总结，设身处地想一下，一切都合情合理了。\par
+
+	开始由大管吹出的上行小三度音型是整个末乐章的内在核心，它随后成为伴奏，衬托出双簧管奏出的连续上四度（纯四加增四）音型，透出无尽悲凉。长笛变奏重复一次这个主题后，通过小三度音型的叠加推向第一个高潮（排练号160，约3分钟处）：上行三度和下行三度的反向对位形成巨大的和声张力，乐队全奏中，小提琴和长笛在它们的极限高音叠加出煽动性效果，理查·施特劳斯在《死与净化》的高潮也运用了这种配器手法。\par
+
+	果然，2/4拍的谐谑曲代替了这段甜美梦境，主奏谐谑曲跳跃主题的竟然是以笨拙著称的大管和长号。这段旋律让人想起肖氏1933年创作的《第一钢琴协奏曲》（为钢琴、弦乐和小号而作，Op.35），那里的小号独奏像是普罗科菲耶夫笔下的少先队员彼得，他此时似乎已经长大进入马戏团当小丑，嬉笑中全是对荒诞世界的反讽。\par
+
+	如此机械化的旋律和配器传递出一种“冷眼看世界”的荒诞感，是肖斯塔科维奇与普罗科菲耶夫最为相通之处。类似的现象在拉赫玛尼诺夫的晚期作品《交响舞曲》（Op.45)开头也能听到，而穆索尔斯基则是首创者。这被俄国人视为音乐中的“颠僧”，即以装疯卖傻来讽刺现实丑恶。肖斯塔科维奇受讽刺作家左琴科影响很大，在其作品中能听到大片反讽讥笑的音响也就不足为奇了。\par
+
+	全曲的高潮出现在约18分钟处（排练号238），即便算不上精彩，也足够震撼了：在定音鼓主属音的衬托下，铜管组齐奏上行级进三音列，弦乐组紧跟下行级进三音列，尽管手法普通，但由于在多次反复中插入多个主题，爆发出惊心动魄的悲剧性效果。对比这一段的演奏版本是件很有意思的事，第一小号经过性升A音由于处在高音区已经很刺耳了，第二小号却同时吹出本位A音，这个非常不协和的半音冲撞会让听众感觉这儿是小号吹跑调了，作曲家所为何意，各人自会有各人的揣测。多数版本的这一段高潮让人难以忍受，也有指挥刻意掩盖这一不协和效果，比如吕绍嘉指挥台湾爱乐乐团版（NSO007-08），和谐的代价就是旋律的半音化线条全无，这就不符合作曲家原意了；个人认为这一段处理最好的是海廷克指挥芝加哥交响乐团版（CSOR901814），既中和了噪音效果，又不失旋律的扭曲效果。\par
+
+	最后的尾声绝对是神来之笔：长达7分钟（有的版本只有5分钟），低音提琴一直在持续一个C音，由于叠加了竖琴和定音鼓的音色，使得这个史无前例的漫长低音仿佛一个濒死之人听到自己的心跳声，虚弱而宁静。乐章开头双簧管呈示的那个连续上四度动机，此时由圆号和长笛分别再现。弦乐和木管在死寂中飘出死魂灵的遗言，真如肖斯塔科维奇所说：“我的交响曲多数是墓碑”。钟琴在反复敲击，仿若天使叩醒了一场惊魂未定的噩梦。加弱音器的小号最后一次奏出上四度动机，冷眼回眸中，尘世的一切已成飘渺的梦境，随钟琴最后的一声敲击而消逝。\par
+
+	对我来说，这个尾声是肖斯塔科维奇音乐中最勾魂的段落。它比马勒的《第九交响曲》末乐章还要超脱，之前所有非人性的折磨都在最后的尾声获得升华。所以，如果你以为阴暗就是全部，中途提前逃走，就永远不会懂得他给出那些苦难与荒诞的意义。
+	
+
+\end{document}

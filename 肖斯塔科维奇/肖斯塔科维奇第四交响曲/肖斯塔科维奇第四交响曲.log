@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.8.12)  27 DEC 2016 11:03
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.8.12)  27 DEC 2016 11:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**马勒第三交响曲.tex
-(./马勒第三交响曲.tex
+**肖斯塔科维奇第四交响曲.tex
+(./肖斯塔科维奇第四交响曲.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -1794,8 +1794,8 @@ Package: xeCJK-listings 2016/05/14 v3.4.0 xeCJK patch file for listings
 LaTeX Warning: Unused global option(s):
     [left=2.5cm,right=2.5cm].
 
-(./马勒第三交响曲.aux)
-\openout1 = `马勒第三交响曲.aux'.
+(./肖斯塔科维奇第四交响曲.aux)
+\openout1 = `肖斯塔科维奇第四交响曲.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
 LaTeX Font Info:    ... okay on input line 142.
@@ -1948,9 +1948,9 @@ LaTeX Info: Redefining \ref on input line 142.
 LaTeX Info: Redefining \pageref on input line 142.
 LaTeX Info: Redefining \nameref on input line 142.
 
-(./马勒第三交响曲.out) (./马勒第三交响曲.out)
+(./肖斯塔科维奇第四交响曲.out) (./肖斯塔科维奇第四交响曲.out)
 \@outlinefile=\write3
-\openout3 = `马勒第三交响曲.out'.
+\openout3 = `肖斯塔科维奇第四交响曲.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
@@ -1981,7 +1981,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 . NFSS spec.: <->"STSongti-SC-Regular/BI/OT:"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
-(./马勒第三交响曲.toc
+(./肖斯塔科维奇第四交响曲.toc
 
 LaTeX Font Warning: Font shape `EU1/华文中宋(0)/bx/n' undefined
 (Font)              using `EU1/华文中宋(0)/m/n' instead on input line 1.
@@ -1996,7 +1996,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write4
-\openout4 = `马勒第三交响曲.toc'.
+\openout4 = `肖斯塔科维奇第四交响曲.toc'.
 
 
 
@@ -2027,7 +2027,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3] 
+[3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4] 
 AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2035,25 +2042,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
- (./马勒第三交响曲.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 186.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 186.
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
+ (./肖斯塔科维奇第四交响曲.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 211.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 211.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 30921 strings out of 493591
- 565212 string characters out of 6143546
- 669223 words of memory out of 5000000
- 33924 multiletter control sequences out of 15000+600000
+ 30998 strings out of 493591
+ 570082 string characters out of 6143546
+ 673227 words of memory out of 5000000
+ 34001 multiletter control sequences out of 15000+600000
  9299 words of font info for 74 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 48i,11n,87p,10364b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,11n,87p,10368b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 马勒第三交响曲.pdf (4 pages).
+Output written on 肖斯塔科维奇第四交响曲.pdf (5 pages).
